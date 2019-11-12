@@ -74,7 +74,7 @@ RSpec.describe 'Task', type: :system do
         click_button 'Update Task'
         click_link 'Back'
         tds = page.all('td')
-        expect(tds[2]).to have_content(Time.current.strftime('%-m/%d %-H:%M'))
+        expect(tds[2]).to have_content(short_time(Time.current))
         expect(current_path).to eq project_tasks_path(project)
       end
 
