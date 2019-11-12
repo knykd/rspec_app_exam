@@ -6,7 +6,8 @@ FactoryBot.define do
     to   = Date.parse("2019/12/31")
     deadline { Random.rand(from..to) }
 
-    trait :change_task do
+    trait :completed_task do
+      status { :done }
       deadline { Random.rand(from..to) }
     end
   end
